@@ -9,7 +9,7 @@
  * @return: none
  */	
 var parser = {
-	version: "0.0.1",
+	version: "0.0.2",
 	version: function () {
 		return this.version;
 	},
@@ -20,7 +20,18 @@ var parser = {
  	 * @return: true if number is between 0-9, false otherwise
 	 */
 	isDigit: function (number) {
- 		return false;
+ 		var digitVerification = false;
+		var digit = "";
+		for (var i = 0; i < number.length; i++) {
+			digit = number.substr(i, 1);
+			if (digit >= "0" && digit <= "9") {
+					digitVerification = true;
+			}
+			else {
+					digitVerification = false;
+			}
+		}
+		return digitVerification;
 	},
 	/**
 	 * @name: isBit
@@ -29,6 +40,17 @@ var parser = {
  	 * @return: true if number is 0 or 1, false otherwise
 	 */
 	isBit: function (number) {
- 		return false;
+ 				var isBin = false;
+		var actualNum = "0";
+		for (var i =0; i<number.length;i++){
+				actualNum = number.substr(i,1);
+			if(actualNum>="0" && actualNum<= "1"){
+				isBin=true;
+			} else{
+				isBin=false;
+				return isBin;
+			}
+		}
+ 		return isBin;
 	},
 }
